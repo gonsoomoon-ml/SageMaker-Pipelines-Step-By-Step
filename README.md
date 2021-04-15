@@ -2,8 +2,10 @@
 
 ## 1.워크샵 배경
 - SageMaker Pipelines의 Modeling Building Pipepine (MBP) 을 Step-By-Step으로 진행을 하면서 배우는 것에 목적을 가집니다.
-- MBP 의 각 단계(스텝) 별로 노트북이 구성 되어있고, 이 단계를 모두 마무리 한후에 마지막으로 모든 단계를 연결하여 파이프라인 생성을 합니다.
+- MBP 의 각 단계(스텝) 별로 노트북이 구성 되어있고, 이 단계를 모두 마무리 한후에 마지막으로 모든 단계를 연결하여 파이프라인 생성을 합니다. 이후 MBP를 스케줄링하여 특정 시간에 실행하는 예시도 포함 합니다.
+
 - 아래는 최종 파이프라인을 연결하여 완료된 MBP 입니다.
+
 ![fraud2scratch2pipeline.png](img/fraud2scratch2pipeline.png)
 
 ## 2.핸즈온 환경
@@ -11,6 +13,12 @@
 - 또한 세이지 메이커의 스튜디오에서 생성된 파이프라인을 GUI 로 보면서 상태를 확인 하세요.
 
 ## 3. 노트북 구성
+
+##### [Quick Approach] 
+- Step-By-Step으로 접근하지 않고, 빠르게 보시기 위해서는 아래 노트북에서 2.1.prepare-env-dataset.ipynb, 8.5.all-pipeline.ipynb 두개만을 실행하시면 됩니다,
+
+##### [Step-By-Step 접근]
+
 - 1.1.skim-dataset.ipynb
     - 데이터 세트가 어떻게 구성이 되었는지 확인합니다.
 - 2.1.prepare-env-dataset.ipynb
@@ -34,4 +42,6 @@
     - 위에 생성한 모든 MBP 스텝을 연결하여 모든 파이프라인을 생성 함.
 - 9.1.Inference-Analyze.ipynb
     - 최종적으로 생성한 실시간 엔드포인트에 추론 테스트
+- 9.5.schedule-pipeline.ipynb
+    - 매일 매 시간마다 MBP를 실행하는 예시
 
