@@ -104,7 +104,10 @@ if __name__ =='__main__':
     base_preproc_input_dir = args.base_preproc_input_dir
     label_column = args.label_column    
 
+    #################################        
     #### 두개의 파일(claim, customer) 을 로딩하여 policy_id 로 조인함  ########
+    #################################    
+    
     logger.info(f"\n### Loading Claim Dataset")
     claim_df = get_dataframe(base_preproc_input_dir,file_name_prefix='claim' )        
     
@@ -183,6 +186,7 @@ if __name__ =='__main__':
     ###############################
     ### 전처리 결과 결합 ####
     ###############################
+    
     logger.info(f"\n ### Handle preprocess results")            
     
     # 전처리 결과를 데이터 프레임으로 생성
@@ -198,7 +202,10 @@ if __name__ =='__main__':
     # label_column을 맨 앞으로 이동 시킴
     full_df = pd.concat([full_df[label_column], full_df.drop(columns=[label_column])], axis=1)
     
+    ###############################    
     # 훈련, 검증 데이터 세트로 분리 및 저장
+    ###############################
+    
     train_df, test_df = split_train_test(full_df, test_ratio=0.1)    
     train_df.to_csv(f"{base_output_dir}/train/train.csv", index=False)
     test_df.to_csv(f"{base_output_dir}/test/test.csv", index=False)    
