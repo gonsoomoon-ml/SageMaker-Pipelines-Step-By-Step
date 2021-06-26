@@ -44,4 +44,25 @@
     - 최종적으로 생성한 실시간 엔드포인트에 추론 테스트
 - 9.5.schedule-pipeline.ipynb
     - 매일 매 시간마다 MBP를 실행하는 예시
+    
+## 참고 자료
 
+- Blog: Architect and build the full machine learning lifecycle with AWS: An end-to-end Amazon SageMaker demo
+    - https://aws.amazon.com/blogs/machine-learning/architect-and-build-the-full-machine-learning-lifecycle-with-amazon-sagemaker/
+    - Code: https://github.com/aws/amazon-sagemaker-examples/tree/master/end_to_end+
+    
+- Amazon SageMaker Model Building Pipelines
+    - 세이지 메이커 모델 빌딩 파이프라인의 개발자 가이드
+    - https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html
+
+- Amazon SageMaker Local Mode Examples    
+    - 로컬 모드에서 사용하는 예시 (로컬 노트북에서 PyCharm 으로 훈련 및 서빙 예시)
+    - https://github.com/aws-samples/amazon-sagemaker-local-mode
+
+- Run Amazon SageMaker Notebook locally with Docker container
+    - https://towardsdatascience.com/run-amazon-sagemaker-notebook-locally-with-docker-container-8dcc36d8524a
+    
+    
+- XGBoost Parameters
+    - XGBoost 파라미터 설명
+    - https://xgboost.readthedocs.io/en/latest/parameter.html

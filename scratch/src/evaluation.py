@@ -8,6 +8,8 @@ import numpy as np
 import pandas as pd
 import argparse
 import os
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
 
 
 import subprocess, sys
@@ -77,12 +79,27 @@ if __name__ == "__main__":
     df = pd.read_csv(test_path)
     logger.info(f"test df sample \n: {df.head(2)}")        
     
-    y_test = df.iloc[:, 0].to_numpy()
+#    y_test = df.iloc[:, 0].astype('int').to_numpy()
+    y_test = df.iloc[:, 0].astype('int')    
     df.drop(df.columns[0], axis=1, inplace=True)
     
     X_test = xgboost.DMatrix(df.values)
     
-    predictions = model.predict(X_test)
+    predictions_prob = model.predict(X_test)
+    
+    # if predictions_prob is greater than 0.5, it is 1 as a fruad, otherwise it is 0 as a non-fraud
+    threshold = 0.5
+    predictions = [1 if e >= 0.5 else 0 for e in predictions_prob ] 
+    
+#     print("y_test: ", y_test)
+#     print("y_test length: ", len(y_test))    
+#     print("predctions length: ", len(predictions))
+#     print("predctions: ", predictions)    
+#     print("predictions: ", predictions)
+    # logging.info(f"{classification_report(y_true=y_test, y_pred = predictions)}")
+    print(f"{classification_report(y_true=y_test, y_pred = predictions)}")
+    cm = confusion_matrix(y_true= y_test, y_pred= predictions)    
+    print(cm)
 
     mse = mean_squared_error(y_test, predictions)
     std = np.std(y_test - predictions)
