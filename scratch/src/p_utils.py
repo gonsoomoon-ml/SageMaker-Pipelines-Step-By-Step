@@ -99,4 +99,17 @@ def predict(predictor, payload):
     return result
 
     
+def get_pos_scale_weight(df, label):
+    '''
+    1, 0 의 레이블 분포를 계산하여 클래스 가중치 리턴
+    예: 1: 10, 0: 90 이면 90/10 = 9 를 제공함. 
+    호출:
+        class_weight = get_pos_scale_weight(train_prep_df, label='fraud')
+    '''
+    fraud_sum = df[df[label] == 1].shape[0]
+    non_fraud_sum = df[df[label] == 0].shape[0]
+    class_weight = int(non_fraud_sum / fraud_sum)
+    print(f"fraud_sum: {fraud_sum} , non_fraud_sum: {non_fraud_sum}, class_weight: {class_weight}")
+    return class_weight
+    
 

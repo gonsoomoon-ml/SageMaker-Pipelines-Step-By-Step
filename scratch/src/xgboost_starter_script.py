@@ -14,6 +14,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     # Hyperparameters are described here
+    parser.add_argument('--scale_pos_weight', type=int, default=50)    
     parser.add_argument('--num_round', type=int, default=999)
     parser.add_argument('--max_depth', type=int, default=3)
     parser.add_argument('--eta', type=float, default=0.2)
@@ -33,7 +34,8 @@ if __name__ == '__main__':
     label = pd.DataFrame(data['fraud'])
     dtrain = xgb.DMatrix(train, label=label)
     
-    params = {'max_depth': args.max_depth, 'eta': args.eta, 'objective': args.objective}
+    params = {'max_depth': args.max_depth, 'eta': args.eta, 'objective': args.objective, 'scale_pos_weight': args.scale_pos_weight}
+    
     num_boost_round = args.num_round
     nfold = args.nfold
     early_stopping_rounds = args.early_stopping_rounds
@@ -45,6 +47,7 @@ if __name__ == '__main__':
         nfold = nfold,
         early_stopping_rounds = early_stopping_rounds,
         metrics = ('auc'),
+        stratified = True,
         seed = 0
         )
     

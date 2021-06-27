@@ -91,6 +91,7 @@ if __name__ =='__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--base_output_dir', type=str, default="/opt/ml/processing/output")
     parser.add_argument('--base_preproc_input_dir', type=str, default="/opt/ml/processing/input")   
+    parser.add_argument('--split_rate', type=float, default=0.1)       
     parser.add_argument('--label_column', type=str, default="fraud")       
     # parse arguments
     args = parser.parse_args()     
@@ -99,10 +100,12 @@ if __name__ =='__main__':
     logger.info(f"args.base_output_dir: {args.base_output_dir}")
     logger.info(f"args.base_preproc_input_dir: {args.base_preproc_input_dir}")    
     logger.info(f"args.label_column: {args.label_column}")        
+    logger.info(f"args.split_rate: {args.split_rate}")            
 
     base_output_dir = args.base_output_dir
     base_preproc_input_dir = args.base_preproc_input_dir
     label_column = args.label_column    
+    split_rate = args.split_rate
 
     #################################        
     #### 두개의 파일(claim, customer) 을 로딩하여 policy_id 로 조인함  ########
@@ -206,7 +209,7 @@ if __name__ =='__main__':
     # 훈련, 검증 데이터 세트로 분리 및 저장
     ###############################
     
-    train_df, test_df = split_train_test(full_df, test_ratio=0.1)    
+    train_df, test_df = split_train_test(full_df, test_ratio=split_rate)    
     train_df.to_csv(f"{base_output_dir}/train/train.csv", index=False)
     test_df.to_csv(f"{base_output_dir}/test/test.csv", index=False)    
 
