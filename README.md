@@ -22,7 +22,20 @@
 ## 3. 데이터 세트 
 모델 및 워크플로를 구축하기 위한 입력은 보험 데이터의 두 테이블 인 클레임(cliams) 테이블과 고객(customers) 테이블입니다. 이 데이터는 SageMaker Processing로 전처리를 합니다. (원본 블로그는 SageMaker Data Wrangler 로 전처리를 합니다.)
 
-## 4. 기술 사용 컴포넌트
+## 4. 선수 지식 및 기술 사용 컴포넌트
+
+### 4.1. 선수 지식
+- AWS Cloud 일반 지식 (S3, EC2, IAM 등) (초급/중급 정도 수준)
+- Python 코딩 (Pandas, Numpy 패키지 초급/중급 정도 수준)
+- ML 기초 지식 수준  (Jupyter Notebook 사용 경험 있음)
+    
+### 4.2. 세이지메이커 추천 선수 지식    
+- [SageMaker Overview (소개 동영상)](https://youtu.be/jF2BN98KBlg)
+- [SageMaker demo](https://youtu.be/miIVGlq6OUk) 
+    - (1시간 데모에 많은 내용을 압축해서 다루고 있습니다. 반복해서 보시거나 돌려보기로 차근차근 보셔도 괜찮습니다.)
+- [세이지메이커 셀프 스터디](https://github.com/gonsoomoon-ml/Self-Study-On-SageMaker)
+    
+### 4.3. 기술 사용 컴포넌트    
 - 데이터 전처리
     - 세이지 메이커 로컬 모드로 다커 컨테이너에서 전처리 수행
     - MBP의 단일 단계인 step_process 정의 및 실행
