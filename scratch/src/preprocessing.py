@@ -47,7 +47,7 @@ def split_train_test(df, test_ratio=0.1):
 
 def get_dataframe(base_preproc_input_dir, file_name_prefix ):    
     '''
-    파일 이름이 들어가 있는 csv 파일을 모두 저장하여 데이ㅓ 프레임을 리턴
+    파일 이름이 들어가 있는 csv 파일을 모두 저장하여 데이터 프레임을 리턴
     '''
     
     input_files = glob('{}/{}*.csv'.format(base_preproc_input_dir, file_name_prefix))
@@ -206,7 +206,7 @@ if __name__ =='__main__':
     full_df = pd.concat([full_df[label_column], full_df.drop(columns=[label_column])], axis=1)
     
     ###############################    
-    # 훈련, 검증 데이터 세트로 분리 및 저장
+    # 훈련, 테스트 데이터 세트로 분리 및 저장
     ###############################
     
     train_df, test_df = split_train_test(full_df, test_ratio=split_rate)    

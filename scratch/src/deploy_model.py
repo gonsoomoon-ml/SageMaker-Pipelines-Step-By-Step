@@ -22,6 +22,9 @@ def _get_logger():
 logger = _get_logger()
 
 
+#########################################
+## 커맨드 인자 처리
+#########################################
 
 # Parse argument variables passed via the DeployModel processing step
 parser = argparse.ArgumentParser()
@@ -49,6 +52,10 @@ sagemaker_boto_client = boto3.client('sagemaker')
 endpoint_config_name=f'{args.model_name[:56]}-config'
 existing_configs = sagemaker_boto_client.list_endpoint_configs(NameContains=endpoint_config_name)['EndpointConfigs']
 
+#########################################
+## endpoint_config 생성
+#########################################
+
 if not existing_configs:
     create_ep_config_response = sagemaker_boto_client.create_endpoint_config(
         EndpointConfigName=endpoint_config_name,
@@ -62,6 +69,10 @@ if not existing_configs:
     )
 
 existing_endpoints = sagemaker_boto_client.list_endpoints(NameContains=args.endpoint_name)['Endpoints']
+
+#########################################
+## endpoint 생성
+#########################################
 
 if not existing_endpoints:
     logger.info(f"Creating endpoint")        
