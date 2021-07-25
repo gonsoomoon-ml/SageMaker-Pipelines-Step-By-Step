@@ -11,7 +11,7 @@
 
 ![fraud2scratch2pipeline.png](img/fraud2scratch2pipeline.png)
 
-### [알림] 이 워크샵의 다음 과정은 여기를 참조 하세요. --> [고급 단계](phase01/Phase01-README.md)
+### [알림] 이 워크샵의 다음 과정은 여기를 참조 하세요. --> [고급 단계](phase01/README.md)
 
 ## 2.비즈니스 문제
 
@@ -113,7 +113,7 @@
     - 매일 매 시간마다 MBP를 실행하는 예시
     
 
-### [알림] 이 워크샵의 다음 과정은 여기를 참조 하세요. --> [고급 단계](phase01/Phase01-README.md)
+### [알림] 이 워크샵의 다음 과정은 여기를 참조 하세요. --> [고급 단계](phase01/README.md)
 
 ## [참고 자료]
 
