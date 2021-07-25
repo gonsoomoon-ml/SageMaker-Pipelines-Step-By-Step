@@ -11,6 +11,8 @@
 
 ![fraud2scratch2pipeline.png](img/fraud2scratch2pipeline.png)
 
+### [알림] 이 워크샵의 다음 과정은 여기를 참조 하세요. --> [고급 단계](phase01/Phase01-README.md)
+
 ## 2.비즈니스 문제
 
 <i> "자동차 보험 사기는 보험 신청에 대한 사실을 허위로 표현하고 보험 청구를 부풀리며 사고를 준비하고 한 번도 발생하지 않은 부상 또는 손상에 대한 청구 양식 제출, 도난 차량에 대한 허위 보고에 이르기까지 다양합니다.  IRC(Insurance Research Council)의 조사에 따르면, 보험 사기는 2012 년 자동차 보험 신체 상해에 대한 총 청구 금액의 15~17 %를 차지했습니다.
@@ -110,6 +112,9 @@
 - 9.5.schedule-pipeline.ipynb
     - 매일 매 시간마다 MBP를 실행하는 예시
     
+
+### [알림] 이 워크샵의 다음 과정은 여기를 참조 하세요. --> [고급 단계](phase01/Phase01-README.md)
+
 ## [참고 자료]
 
 - Blog: Architect and build the full machine learning lifecycle with AWS: An end-to-end Amazon SageMaker demo
