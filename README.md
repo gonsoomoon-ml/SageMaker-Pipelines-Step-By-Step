@@ -62,6 +62,7 @@
 
 ### [Quick Approach] 
 - Step-By-Step으로 접근하지 않고, 빠르게 보시기 위해서는 아래 노트북만을 수행 하세요.
+    - 1.1.Explore-Dataset.ipynb
     - 2.1.Prepare-Dataset.ipynb
     - 8.5.all-pipeline.ipynb
     - 9.1.Inference-Analyze.ipynb    
