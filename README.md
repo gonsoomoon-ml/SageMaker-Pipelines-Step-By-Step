@@ -2,7 +2,7 @@
 
 ## 1.워크샵 배경
 - SageMaker Pipelines의 Modeling Building Pipepine (MBP) 을 Step-By-Step으로 진행을 하면서 배우는 것에 목적을 가집니다. 여기에 사용된 데이터 세트 및 일부 코드는 여기 블로그에서 가져왔습니다. [Blog: Architect and build the full machine learning lifecycle with AWS: An end-to-end Amazon SageMaker demo](https://aws.amazon.com/blogs/machine-learning/architect-and-build-the-full-machine-learning-lifecycle-with-amazon-sagemaker/). 이 워크샵을 완료후에 이 블로그의 참조를 권장 드립니다.
-    - 원본 블로그와 이 워크샵의 차이점은 주어진 비즈니스 문제에 원본은 세이지 메이커 솔류션의 End-To-End로 접근을 합니다. 하지만 이 워크샵은 세이지 메이커의 **"데이터 전처리인 프로세싱" -->  "훈련" -->  "모델 배포 및 추론"** 를 현업에서 실제로 개발 하듯이 Step-By-Step으로 접근합니다. 이 과정속에서 단계에 대한 내용 및 코드 또한 배우게 됩니다.
+    - 원본 블로그와 이 워크샵의 차이점은 주어진 비즈니스 문제에 원본은 세이지 메이커 솔류션의 End-To-End로 접근을 합니다. 하지만 이 워크샵은 세이지 메이커의 **"데이터 전처리인 프로세싱" -->  "훈련" -->  "모델 배포 및 추론"** 를 현업에서 실제로 개발 하듯이 Step-By-Step으로 접근합니다. 이 과정속에서 단계에 대한 내용 및 코드 또한 배우게 됩니다. 또한 고급 단계를 통해서 다른 스텝들인 "모델 등록", "모델 튜닝", "조건" 등을 배우고, 이와 더불어서 "캐싱" 사용 및 실험(Experiment) 의 통합을 배울 수 있습니다.
     
 
 - MBP 의 각 단계(스텝) 별로 노트북이 구성 되어있고, 이 단계를 모두 마무리 한후에 마지막으로 모든 단계를 연결하여 파이프라인 생성을 합니다. 이후 MBP를 스케줄링하여 특정 시간에 실행하는 예시도 포함 합니다.
