@@ -34,9 +34,9 @@ AWS에 인프라 배포는 비용이 발생됩니다. AWS 이벤트에 참석하
 
 | Region | Launch Template |
 | ------------ | ------------- | 
-**Seoul** (ap-northeast-2) | [![Launch SageMaker Notebook with CloudFormation](images/deploy-to-aws.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/new?stackName=sagemaker-notebook)  
+**Seoul** (ap-northeast-2) | [![Launch SageMaker Notebook with CloudFormation](images/deploy-to-aws.png)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/new?stackName=sagemaker-notebook&templateURL=https://webinar-x-sumerian-host.s3.ap-northeast-2.amazonaws.com/sagemaker-only-notebook.yaml)  
 
-1. 템플릿을 통해 자동으로 CloudFormation 대시 보드로 이동하여 지정된 리전에서 스택 생성 프로세스를 시작합니다. 템플릿 지정 -> 템플릿 소스 -> 템플릿 파일 업로드 -> 파일 선택을 선택하고 워크샵을 위해 준비된 템플릿 파일을 로컬 파일시스템에서 지정합니다. "다음" 버튼을 클릭하면 스택에 관한 정보를 입력하게 되는데 스택을 계정 내에서 고유한 스택 이름을 지정하고(여기서는 sagemaker-notebook 자동 지정) Notebook Instance Name에는 원하는 이름을 입력하면 마법사를 통해 스택을 시작합니다. 모든 옵션을 기본값으로 유지하지만 CloudFormation에서 사용자를 대신하여 IAM 역할을 생성할 수 있도록 확인란을 선택해야합니다:
+1. 템플릿을 통해 자동으로 CloudFormation 대시 보드로 이동하여 지정된 리전에서 스택 생성 프로세스를 시작합니다. 사전에 S3에 업로드된 템플릿이 지정되어있으므로 "다음" 버튼을 클릭하고 스택에 관한 정보를 입력하게 되는데 스택을 계정 내에서 고유한 스택 이름을 지정하고(여기서는 sagemaker-notebook 자동 지정) Notebook Instance Name에는 원하는 이름을 입력하면 마법사를 통해 스택을 시작합니다. 모든 옵션을 기본값으로 유지하지만 CloudFormation에서 사용자를 대신하여 IAM 역할을 생성할 수 있도록 아래와 같이 확인란을 선택해야합니다:
 
     ![IAM resources acknowledgement](images/cf-02.png)
 
@@ -82,3 +82,21 @@ AWS에 인프라 배포는 비용이 발생됩니다. AWS 이벤트에 참석하
 마지막으로, CloudFormation의 상단 삭제 버튼을 클릭해서 워크숍에서 사용된 [CloudFormation 스택을 삭제합니다](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-console-delete-stack.html). 
 ![IAM resources acknowledgement](images/cf-03.png)
 스택 삭제 프로세스에 오류가 발생하면 CloudFormation 대시 보드에서 이벤트 탭을 보고 실패한 단계를 확인합니다. CloudFormation에서 관리하는 리소스에 연결된 수동으로 생성된 리소스를 정리해야하는 경우 일 수 있습니다.
+
+## [Option] SageMaker Studio 시작하기
+
+모든 ML 개발 단계를 수행할 수 있는 웹 기반의 IDE를 제공하는 Amazon SageMaker Studio와 Amazon SageMaker Studio 노트북을 시작하기 위해서는 SageMaker 콘솔을 사용하여 Studio 온보딩 프로세스를 완료해야 합니다.
+
+![SageMaker Studio On-boarding](images/sm-03.png)
+
+AWS 콘솔 홈페이지에서 서비스 검색바에 SageMaker를 입력하면 SageMaker 서비스를 사용할 수 있으며 좌측 메뉴에서 SageMaker Studio를 선택하면 위와 같이 SageMaker Studio 시작하기 화면을 볼 수 있습니다. 빠른 시작과 표준 설정 절차를 사용해서 SageMaker Studio를 시작할 수 있습니다. 여기서는 빠른 시작을 선택하고 실행 역할은 새 역할 생성을 선택하면 아래와 같이 IAM 역할 생성 창이 나타납니다.
+
+![SageMaker Studio IAM Role](images/sm-04.png)
+
+여기서는 모든 S3 버킷(운영환경에서는 최소한의 권한 원칙에 따라 필요한 버킷만 권한을 지정해야합니다)을 지정하고 역할 생성 버튼을 클릭해서 역할을 생성합니다. 
+
+![SageMaker Studio](images/sm-05.png)
+
+전송 버튼을 클릭하면 아래와 같이 SageMaker Studio 제어판에 도메인이 생성되며 사용자를 추가하거나 default 사용자를 사용해서 SageMaker Studio를 이용할 수 있습니다. 사용자 목록 우축에 Studio 열기를 클릭해서 SageMaker Studio를 사용해보세요.
+
+![SageMaker Studio](images/sm-06.png)
