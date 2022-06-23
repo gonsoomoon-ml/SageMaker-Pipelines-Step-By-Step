@@ -120,6 +120,9 @@ if __name__ == '__main__':
     model_location = args.model_dir + '/xgboost-model'
     
     
+    print(f"metrics_location: \n {metrics_location}")
+    print(f"model_location: \n {model_location}")
+    
     with open(metrics_location, 'w') as f:
         json.dump(metrics_data, f)
     
